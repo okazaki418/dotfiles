@@ -13,8 +13,8 @@ makedir .cargo
 makedir .cargo/bin
 
 # neovim
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/unstable
+yes | sudo apt-get install software-properties-common
+yes | sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim build-essential ripgrep duf exa zoxide zsh unzip sshpass -y
 
