@@ -36,11 +36,11 @@ github = "zsh-users/zsh-completions"
 apply = ["defer"]
 
 # [plugins.dotfiles-sync]
-# local = '~/dotfiles/.zsh/sync'
+# local = '~/.zsh/sync'
 # use = ['*.zsh']
 # apply = ['source']
 
 [plugins.dotfiles-defer]
-local = '~/dotfiles/.zsh/defer'
+local = '~/.zsh/defer'
 use = ['*.zsh']
 apply = ['defer']
