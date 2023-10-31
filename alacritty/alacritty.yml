@@ -1,0 +1,38 @@
+font:
+  size: 15.0
+
+  normal:
+    # family: HackGen35NerdConsole
+    # family: PlemolJP35ConsoleNF
+    # family: Firge35NerdConsole
+    # family: UDEVGothic35NFLG
+    # family: Fantasque Sans Mono
+    # family: Mononoki NF
+    # family: SpaceMono NF
+    family: Firple
+    style: Medium
+
+  bold:
+    # family: HackGen35NerdConsole
+    # family: PlemolJP35ConsoleNF
+    # family: Firge35NerdConsole
+    # family: UDEVGothic35NFLG
+    # family: Fantasque Sans Mono
+    # family: Mononoki NF
+    # family: SpaceMono NF
+    family: Firple
+    style: Bold
+
+env:
+  TERM: xterm-256color
+
+window:
+  opacity: 0.8
+  dynamic_title: true
+  padding:
+    x: 3
+    y: 4
+  dynamic_padding: true
+
+import:
+  - ~/.config/alacritty/catppuccin-mocha.yml
