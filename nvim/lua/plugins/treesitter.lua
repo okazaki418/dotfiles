@@ -1,7 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufRead",
+    event = {"BufRead", "BufNewFile"},
     dependencies = {
       "andymass/vim-matchup",
     },
@@ -31,7 +31,7 @@ return {
 
   {
     "HiPhish/rainbow-delimiters.nvim",
-    event = "BufRead",
+    event = {"BufRead", "BufNewFile"},
     opts = {},
     config = function()
       local rainbow_delimiters = require("rainbow-delimiters")
