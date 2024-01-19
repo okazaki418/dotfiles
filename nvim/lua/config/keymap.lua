@@ -19,3 +19,10 @@ vim.keymap.set({'n', 'v'}, '<leader>q', ':q<CR>', { noremap = true })
 vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = true })
 -- ttでターミナル起動
 -- vim.keymap.set({'n', 'v'}, 'tt', '<cmd>belowright new<CR><cmd>terminal<CR><cmd>resize 10<CR>', { noremap = true, silent = true })
+-- leader+fでフォーマット
+vim.keymap.set('n', '<leader>f', function()
+  vim.lsp.buf.format {
+    timeout_ms = 200,
+    async = true,
+  }
+end)
