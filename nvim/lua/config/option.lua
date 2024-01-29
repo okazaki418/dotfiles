@@ -1,5 +1,3 @@
--- LeaderキーをSpaceに設定
-vim.g.mapleader = " "
 -- 起動時メッセージの省略
 vim.opt.shortmess:append({ I = true })
 -- 行番号の表示
