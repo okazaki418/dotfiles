@@ -1,14 +1,15 @@
 return {
   {
-    "stevearc/oil.nvim",
-    dependencies = {"nvim-tree/nvim-web-devicons"},
-    event = "VimEnter",
-    main = "oil",
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
     config = function()
-      require("oil").setup({
-        default_file_explorer = true
-      })
-      vim.keymap.set("n", "-", "<CMD>Oil<CR>", {desc = "Open parent directory"})
-    end
-  },
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+      require("nvim-tree").setup()
+    end,
+    keys = {
+      { mode = "n", "<leader>e", "<cmd>NvimTreeToggle<CR>" }
+    }
+  }
 }
