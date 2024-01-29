@@ -1,4 +1,4 @@
--- LeaderキーをSpaceに設定
+-- leaderキーをSpaceに設定
 vim.g.mapleader = " "
 -- jjとjkkとkjでEsc
 vim.keymap.set('i', 'jj', '<ESC>', { noremap = true, silent = true })
@@ -8,13 +8,13 @@ vim.keymap.set('i', 'jk', '<ESC>', { noremap = true, silent = true })
 vim.keymap.set('i', 'kj', '<ESC>', { noremap = true, silent = true })
 -- vim.keymap.set('t', 'kj', '<ESC>', { noremap = true, silent = true })
 -- ;で:を入力
-vim.keymap.set({'n', 'v'}, ';', ':', { noremap = true })
+vim.keymap.set({ 'n', 'v' }, ';', ':', { noremap = true })
 -- 検索ハイライトをEscで非表示
 vim.keymap.set('n', '<ESC><ESC>', ':nohl<CR>', { noremap = true, silent = true })
 -- leader+wでファイル保存
-vim.keymap.set({'n', 'v'}, '<leader>w', ':w<CR>', { noremap = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>w', ':w<CR>', { noremap = true })
 -- leader+qで終了
-vim.keymap.set({'n', 'v'}, '<leader>q', ':q<CR>', { noremap = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>q', ':q<CR>', { noremap = true })
 -- TerminalでEsc
 vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = true })
 -- ttでターミナル起動
