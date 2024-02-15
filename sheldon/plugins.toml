@@ -35,10 +35,10 @@ github = 'zsh-users/zsh-autosuggestions'
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
 
-# [plugins.dotfiles-sync]
-# local = '~/.zsh/sync'
-# use = ['*.zsh']
-# apply = ['source']
+[plugins.dotfiles-sync]
+local = '~/.zsh/sync'
+use = ['*.zsh']
+apply = ['source']
 
 [plugins.dotfiles-defer]
 local = '~/.zsh/defer'
