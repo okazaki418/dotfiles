@@ -1,7 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = {"BufRead", "BufNewFile"},
+    event = { "BufRead", "BufNewFile" },
     dependencies = {
       "andymass/vim-matchup",
     },
@@ -24,18 +24,18 @@ return {
         "ssh_config",
         "vim",
       },
-      highlights = {enable = true},
-      matchup = {enable = true}
+      highlights = { enable = true },
+      matchup = { enable = true }
     }
   },
 
   {
     "HiPhish/rainbow-delimiters.nvim",
-    event = {"BufRead", "BufNewFile"},
+    event = { "BufRead", "BufNewFile" },
+    main = {"rainbow-delimiters.setup"},
     opts = {},
     config = function()
-      local rainbow_delimiters = require("rainbow-delimiters")
-
+      local rainbow_delimiters = require 'rainbow-delimiters'
       vim.g.rainbow_delimiters = {
         strategy = {
           [''] = rainbow_delimiters.strategy['global'],
@@ -44,6 +44,10 @@ return {
         query = {
           [''] = 'rainbow-delimiters',
           lua = 'rainbow-blocks',
+        },
+        priority = {
+          [''] = 110,
+          lua = 210,
         },
         highlight = {
           'RainbowDelimiterRed',
