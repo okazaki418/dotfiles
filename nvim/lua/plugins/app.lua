@@ -77,7 +77,205 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     },
-    opts = {}
+    config = function()
+      local lualine = require("lualine")
+
+      local colors = {
+        red    = "#E06C75",
+        yellow = "#E5C07B",
+        blue   = "#61AFEF",
+        orange = "#D19A66",
+        green  = "#98C379",
+        violet = "#C678DD",
+        cyan   = "#56B6C2",
+      }
+
+      local conditions = {
+        buffer_not_empty = function()
+          return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+        end,
+        hide_in_width = function()
+          return vim.fn.winwidth(0) > 80
+        end,
+      }
+
+      local config = {
+        options = {
+          component_separators = "",
+          section_separators = "",
+          theme = "ayu",
+        },
+        sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
+        },
+        inactive_section = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
+        }
+      }
+
+      local function ins_left(component)
+        table.insert(config.sections.lualine_c, component)
+      end
+      local function ins_right(component)
+        table.insert(config.sections.lualine_x, component)
+      end
+
+      ins_left {
+        function()
+          return "▊"
+        end,
+        color = function()
+          local mode_color = {
+            n = colors.blue,
+            i = colors.green,
+            v = colors.violet,
+            V = colors.violet,
+            c = colors.orange,
+            s = colors.violet,
+            S = colors.violet,
+          }
+          return { fg = mode_color[vim.fn.mode()] }
+        end,
+        padding = { left = 0, right = 0 },
+      }
+
+      ins_left {
+        "mode",
+        color = function()
+          local mode_color = {
+            n = colors.blue,
+            i = colors.green,
+            v = colors.violet,
+            V = colors.violet,
+            c = colors.orange,
+            s = colors.violet,
+            S = colors.violet,
+          }
+          return { fg = mode_color[vim.fn.mode()] }
+        end
+      }
+
+      ins_left {
+        "filename",
+        cond = conditions.buffer_not_enpty,
+      }
+
+      ins_left {
+        "branch",
+        color = { fg = colors.violet }
+      }
+      ins_left {
+        "diff",
+        symbols = {
+          added    = " ",
+          modified = " ",
+          removed  = " "
+        },
+        diff_color = {
+          added    = { fg = colors.green },
+          modified = { fg = colors.orange },
+          removed  = { fg = colors.red },
+        },
+        cond = conditions.hide_in_width,
+      }
+
+      ins_left {
+        "diagnostics",
+        sources = { "nvim_diagnostic" },
+        symbols = { error = " ", warn = " ", info = " ", hint = " " },
+        diagnostics_color = {
+          error = { fg = colors.red },
+          warn  = { fg = colors.yellow },
+          info  = { fg = colors.cyan },
+          hint  = { fg = colors.green },
+        }
+      }
+
+      ins_right {
+        'o:encoding',
+        fmt = string.upper,
+        cond = conditions.hide_in_width,
+      }
+
+      ins_right {
+        "fileformat",
+        fmt = string.upper,
+        icons_enabled = true,
+      }
+      ins_right {
+        "fileformat",
+        fmt = string.upper,
+        icons_enabled = false,
+        padding = { left = 0, right = 1 },
+      }
+
+      ins_right {
+        "filetype"
+      }
+
+      ins_right {
+        "progress",
+        color = function()
+          local mode_color = {
+            n = colors.blue,
+            i = colors.green,
+            v = colors.violet,
+            V = colors.violet,
+            c = colors.orange,
+            s = colors.violet,
+            S = colors.violet,
+          }
+          return { fg = mode_color[vim.fn.mode()] }
+        end,
+      }
+
+      ins_right {
+        "location",
+        color = function()
+          local mode_color = {
+            n = colors.blue,
+            i = colors.green,
+            v = colors.violet,
+            V = colors.violet,
+            c = colors.orange,
+            s = colors.violet,
+            S = colors.violet,
+          }
+          return { fg = mode_color[vim.fn.mode()] }
+        end,
+      }
+
+      ins_right {
+        function()
+          return "▊"
+        end,
+        color = function()
+          local mode_color = {
+            n = colors.blue,
+            i = colors.green,
+            v = colors.violet,
+            V = colors.violet,
+            c = colors.orange,
+            s = colors.violet,
+            S = colors.violet,
+          }
+          return { fg = mode_color[vim.fn.mode()] }
+        end,
+        padding = { left = 0, right = 0 },
+      }
+
+      lualine.setup(config)
+    end
   },
 
   {
