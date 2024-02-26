@@ -103,7 +103,7 @@ return {
         options = {
           component_separators = "",
           section_separators = "",
-          theme = "ayu",
+          theme = "onedark",
         },
         sections = {
           lualine_a = {},

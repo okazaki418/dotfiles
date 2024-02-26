@@ -7,12 +7,24 @@ return {
   --   end
   -- },
 
+  -- {
+  --   "Shatur/neovim-ayu",
+  --   lazy = false, priority = 1000,
+  --   config = function()
+  --     require("ayu").setup({})
+  --     vim.cmd[[colorscheme ayu-dark]]
+  --   end
+  -- },
+
   {
-    "Shatur/neovim-ayu",
-    lazy = false, priority = 1000,
+    "navarasu/onedark.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require("ayu").setup({})
-      vim.cmd[[colorscheme ayu-dark]]
+      require("onedark").setup {
+        style = "darker"
+      }
+      vim.cmd[[colorscheme onedark]]
     end
   },
 }
