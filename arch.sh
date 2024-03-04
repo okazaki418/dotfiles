@@ -11,7 +11,7 @@ makedir .config
 makedir work
 
 # yay
-yes | sudo pacman -S base-devel dust duf exa starship sheldon zsh ripgrep npm unzip wget bottom procs inetutils dnsutils sshpass
+yes | sudo pacman -S base-devel dust duf exa starship sheldon zsh ripgrep npm unzip wget bottom procs inetutils dnsutils sshpass bat diskonaut
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yay-bin.tar.gz
 mv yay-bin.tar.gz $HOME/work
 cd $HOME/work
