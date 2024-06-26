@@ -27,24 +27,33 @@ return {
   --     vim.cmd[[colorscheme onedark]]
   --   end
   -- },
+  -- {
+  --   'uloco/bluloco.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   dependencies = { 'rktjmp/lush.nvim' },
+  --   config = function()
+  --     require("bluloco").setup({
+  --       style       = "auto",
+  --       transparent = false,
+  --       italics     = false,
+  --       terminal    = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
+  --       guicursor   = false,
+  --     })
+  --     vim.opt.termguicolors = true
+  --     vim.cmd('colorscheme bluloco')
+  --   end,
+  -- },
   {
-    'uloco/bluloco.nvim',
-    lazy = false,
-    priority = 1000,
-    dependencies = { 'rktjmp/lush.nvim' },
+    'projekt0n/github-nvim-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      require("bluloco").setup({
-        style       = "auto",
-        transparent = false,
-        italics     = false,
-        terminal    = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
-        guicursor   = false,
-      })
-      vim.opt.termguicolors = true
-      vim.cmd('colorscheme bluloco')
+      require('github-theme').setup({})
+      vim.cmd('colorscheme github_dark_default')
     end,
   },
-  -- {
+  -- -- {
   --   'marko-cerovac/material.nvim',
   --   lazy = false,
   --   priority = 1000,
