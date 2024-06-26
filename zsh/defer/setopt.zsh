@@ -10,6 +10,9 @@ setopt hist_reduce_blanks
 # コマンドのスペルミスを指摘
 setopt correct
 
+# ワイルドカード等を柔軟に
+setopt nomatch
+
 # 大文字小文字無視
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
