@@ -53,7 +53,37 @@ return {
       vim.cmd('colorscheme github_dark_default')
     end,
   },
-  -- -- {
+  -- {
+  --   'sekke276/dark_flat.nvim',
+  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require('dark_flat').setup({
+  --       transparent = false,
+  --       italics = true,
+  --     })
+  --     vim.cmd('colorscheme dark_flat')
+  --   end,
+  -- },
+  -- {
+  --   'zootedb0t/citruszest.nvim',
+  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require('citruszest').setup({})
+  --     vim.cmd('colorscheme citruszest')
+  --   end,
+  -- },
+  -- {
+  --   'dasupradyumna/midnight.nvim',
+  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require('midnight').setup({})
+  --     vim.cmd('colorscheme midnight')
+  --   end,
+  -- },
+  -- {
   --   'marko-cerovac/material.nvim',
   --   lazy = false,
   --   priority = 1000,
