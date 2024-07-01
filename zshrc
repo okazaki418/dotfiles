@@ -12,7 +12,7 @@ fi
 # cdの後にls
 chpwd() {
     if [[ $(pwd) != $HOME ]]; then;
-        exa --icons
+        eza --icons
     fi
 }
 
