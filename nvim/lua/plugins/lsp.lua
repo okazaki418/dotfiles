@@ -15,14 +15,18 @@ return {
 
   {
     "williamboman/mason-lspconfig.nvim",
-    event = {"BufReadPre", "BufNewFile"},
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      {"williamboman/mason.nvim"},
-      {"neovim/nvim-lspconfig"},
-      {"hrsh7th/cmp-nvim-lsp"}
+      { "williamboman/mason.nvim" },
+      { "neovim/nvim-lspconfig" },
+      { "hrsh7th/cmp-nvim-lsp" }
     },
     config = function()
-      local opt = {}
+      local opt = {
+        on_attach = function(client, bufnr)
+          require("nvim-navic").attach(client, bufnr)
+        end,
+      }
       require("mason-lspconfig").setup()
       require("mason-lspconfig").setup_handlers {
         function(server_name)
@@ -42,7 +46,7 @@ return {
 
   {
     "jay-babu/mason-null-ls.nvim",
-    event = {"BufReadPre", "BufNewFile"},
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "williamboman/mason.nvim",
       "nvimtools/none-ls.nvim"
@@ -51,4 +55,15 @@ return {
       handlers = {}
     },
   },
+  {
+    "SmiteshP/nvim-navic",
+    event = "VeryLazy",
+    dependencies = {
+      "neovim/nvim-lspconfig"
+    },
+    config = function()
+      require("nvim-navic").setup {}
+      vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+    end
+  }
 }
