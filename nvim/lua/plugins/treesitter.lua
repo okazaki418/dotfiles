@@ -3,9 +3,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufRead", "BufNewFile" },
     main = "nvim-treesitter.configs",
-    -- dependencies = {
-    --   "andymass/vim-matchup",
-    -- },
     build = ":TSUpdate",
     opts = {
       ensure_installed = {
