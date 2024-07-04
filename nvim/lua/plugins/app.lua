@@ -343,8 +343,8 @@ return {
     config = function()
       require("illuminate").configure({
         delay = 50,
-
       })
+      vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#444444" })
     end
   }
 }

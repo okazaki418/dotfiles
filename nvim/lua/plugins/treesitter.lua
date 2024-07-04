@@ -2,9 +2,11 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufRead", "BufNewFile" },
+    main = "nvim-treesitter.configs",
     dependencies = {
       "andymass/vim-matchup",
     },
+    build = ":TSUpdate",
     opts = {
       ensure_installed = {
         "bash",
@@ -32,7 +34,7 @@ return {
   {
     "HiPhish/rainbow-delimiters.nvim",
     event = { "BufRead", "BufNewFile" },
-    main = {"rainbow-delimiters.setup"},
+    main = { "rainbow-delimiters.setup" },
     opts = {},
     config = function()
       local rainbow_delimiters = require 'rainbow-delimiters'

@@ -1,7 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = { "InsertEnter", "VeryLazy" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -42,7 +42,7 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({select = true}),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
 
         formatting = {
@@ -54,28 +54,28 @@ return {
         },
 
         sources = cmp.config.sources({
-          {name = "nvim_lsp"},
-          {name = "vsnip"},
-          {name = "buffer"},
-          {name = "calc"},
-          {name = "path"},
-          {name = "nvim_lsp_signature_help"},
+          { name = "nvim_lsp" },
+          { name = "vsnip" },
+          { name = "buffer" },
+          { name = "calc" },
+          { name = "path" },
+          { name = "nvim_lsp_signature_help" },
         }),
       })
 
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
-          {name = 'nvim_lsp_document_symbol'},
-          {name = 'buffer'}
+          { name = 'nvim_lsp_document_symbol' },
+          { name = 'buffer' }
         })
       })
 
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
-          {name = 'path'},
-          {name = 'cmdline'}
+          { name = 'path' },
+          { name = 'cmdline' }
         })
       })
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
