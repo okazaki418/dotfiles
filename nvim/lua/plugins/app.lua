@@ -137,7 +137,7 @@ return {
         options = {
           component_separators = "",
           section_separators = "",
-          -- theme = "onedark",
+          theme = "github_dark_high_contrast",
         },
         sections = {
           lualine_a = {},
@@ -319,16 +319,12 @@ return {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
-    opts = {
-      presets = {
-        long_message_to_split = true, -- long messages will be sent to a split
-      }
-    },
     init = function()
       require("notify").setup({
         background_colour = "#000000",
       })
-    end
+    end,
+    opts = {},
   },
 
   {
