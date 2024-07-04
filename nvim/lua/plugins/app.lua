@@ -317,9 +317,18 @@ return {
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      -- "rcarriga/nvim-notify",
+      "rcarriga/nvim-notify",
     },
-    opts = {}
+    opts = {
+      presets = {
+        long_message_to_split = true, -- long messages will be sent to a split
+      }
+    },
+    init = function()
+      require("notify").setup({
+        background_colour = "#000000",
+      })
+    end
   },
 
   {
