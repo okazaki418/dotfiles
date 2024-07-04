@@ -3,10 +3,10 @@ return {
     "uga-rosa/translate.nvim",
     event = "VimEnter",
     opts = {
-      default = {command = "google"},
+      default = { command = "google" },
       preset = {
         output = {
-          split = {append = true}
+          split = { append = true }
         }
       }
     },
