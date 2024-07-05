@@ -63,8 +63,8 @@ return {
         chunk = {
           enable = true,
           style = {
-            { fg = "#0072bc" },
             -- { fg = "#1040cf" },
+            { fg = "#0072bc" },
             { fg = "#cc0033" },
           },
           duration = 200,
