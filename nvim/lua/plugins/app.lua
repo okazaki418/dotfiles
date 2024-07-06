@@ -107,7 +107,7 @@ return {
 
   {
     "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
+    event = "UIEnter",
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     },
@@ -319,12 +319,39 @@ return {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
-    init = function()
+    config = function()
       require("notify").setup({
         background_colour = "#000000",
+        render = "compact",
+        stages = "fade_in_slide_out",
+        timeout = 0,
+      })
+      require("noice").setup({
+        cmdline = {
+          enabled = true,
+          view = "cmdline_popup",
+        },
+        messages = {
+          enabled = true,
+          view = "notify",
+          view_search = "virtualtext"
+        },
+        presets = {
+          bottom_search = true
+        },
+        throttle = 0.001,
+        routes = {
+          -- {
+          --   filter = { event = "msg_show", find = "Pattern not found" },
+          --   view = "mini"
+          -- },
+          -- {
+          --   filter = { event = "msg_show", find = "%d+L, %d+B written" },
+          --   view = "mini"
+          -- },
+        },
       })
     end,
-    opts = {},
   },
 
   {
@@ -336,12 +363,6 @@ return {
     end
   },
 
-  -- {
-  --   "rcarriga/nvim-notify",
-  --   main = "notify",
-  --   opts = {}
-  -- },
-
   {
     "RRethy/vim-illuminate",
     event = "VeryLazy",
@@ -349,7 +370,9 @@ return {
       require("illuminate").configure({
         delay = 50,
       })
+      vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = "#444444" })
       vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#444444" })
+      vim.api.nvim_set_hl(0, "IlluminatedWordWirte", { bg = "#444444" })
     end
   }
 }

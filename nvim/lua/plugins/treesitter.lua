@@ -20,6 +20,7 @@ return {
         "markdown",
         "markdown_inline",
         "make",
+        "regex",
         "ssh_config",
         "vim",
       },
