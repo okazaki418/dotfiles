@@ -33,6 +33,7 @@ yes | cargo-binstall bottom
 yes | cargo-binstall du-dust
 yes | cargo-binstall procs
 yes | cargo-binstall diskonaut
+yes | cargo-binstall tree-sitter-cli
 
 # $HOME/FILE
 ln -snf $HOME/dotfiles/zshrc $HOME/.zshrc

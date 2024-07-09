@@ -33,6 +33,7 @@ cargo-binstall bottom
 cargo-binstall dust
 cargo-binstall duf
 cargo-binstall bottom
+cargo-binstall tree-sitter-cli
 
 # $HOME/FILE
 ln -snf $HOME/dotfiles/zshrc $HOME/.zshrc
