@@ -28,3 +28,5 @@ vim.cmd([[autocmd TermOpen * :startinsert]])
 -- ターミナルで行番号非表示
 vim.cmd([[autocmd TermOpen * :setlocal norelativenumber]])
 vim.cmd([[autocmd TermOpen * :setlocal nonumber]])
+-- チルダの削除
+vim.opt.fillchars:append("eob: ")
